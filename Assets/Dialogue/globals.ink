@@ -1,1 +1,0 @@
-VAR energy = 100
