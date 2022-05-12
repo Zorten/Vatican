@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void BeginGame()
     {
+        Debug.Log("begin button works!");
         SceneManager.LoadScene(1);
     }
 
