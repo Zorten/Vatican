@@ -9,6 +9,7 @@ public class GeneralThingsThatHappen : MonoBehaviour
     public int KarmaDown = 10;
     private int criteriaLeft = 6;
     private int itemsLeft = 8;
+    private Rooms currRoom;
     [SerializeField] private int Karma = 100;
     // Start is called before the first frame update
     public void AddEnergy(int n){

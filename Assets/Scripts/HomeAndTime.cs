@@ -61,6 +61,9 @@ public class HomeAndTime : MonoBehaviour
             statusText.text = "O sweet release of death, whisk me away from this mortal realm";
         }
     }
+    public int getDays(){
+        return days;
+    }
     // Start is called before the first frame update
     void Start()
     {
