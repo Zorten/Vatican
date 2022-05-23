@@ -438,8 +438,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 1}
+    m_PressedColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
     m_SelectedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -973,8 +973,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inkJSON: {fileID: 4900000, guid: 20aedc47b23e35f4e843541be240b23a, type: 3}
-  StartIcon: {fileID: 1614316960}
+  StartIcon: {fileID: 1649483730}
   ContinueIcon: {fileID: 1839484264}
+  CurrentIcon: {fileID: 1614316960}
 --- !u!61 &1614316963
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1044,7 +1045,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1614316965}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1614316962}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1614316965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1272,6 +1285,7 @@ MonoBehaviour:
   inkJSON: {fileID: 4900000, guid: 0030e515bb7cc034fb0d1ffec2db5328, type: 3}
   StartIcon: {fileID: 1649483730}
   ContinueIcon: {fileID: 1839484264}
+  CurrentIcon: {fileID: 1649483730}
 --- !u!61 &1649483733
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1341,7 +1355,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1649483735}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1649483732}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1649483735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1806,8 +1832,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 1}
+    m_PressedColor: {r: 0.9372549, g: 0.9372549, b: 0.9372549, a: 1}
     m_SelectedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
