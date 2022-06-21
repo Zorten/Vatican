@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private GameObject continueIcon;
     [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private GameObject CurrentIcon;
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
@@ -94,6 +95,9 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(true);
         
         dialogueVariables.StartListening(currentStory);
+        currentStory.BindExternalFunction ("setButtonActive", () => {
+            CurrentIcon.SetActive(true);
+        });
 
         ContinueStory();
     }
@@ -240,5 +244,10 @@ public class DialogueManager : MonoBehaviour
         }
         return variableValue;
     }
+
+    // public void setButtonActive(GameObject icon){
+    //     icon.SetActive(true);
+
+    // }
 
 }

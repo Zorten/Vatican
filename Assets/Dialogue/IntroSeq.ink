@@ -55,14 +55,14 @@ Will you enter?
 === BRAVE2 === 
 You grip the doorknob of the home. You feel your eyelids grow heavy. Your legs begin to buckle at the weight of your body and your head sways from the sudden exhaustion. It's as if the home is draining the <b><color=\#5B81FF>energy</color></b> out of you. Alessandro lingers in the back of your mind as the will to enter the home fleets
 ~energy = 80
-
-DAY ONE
+~ setButtonActive()
 ->END
 
 ===COWARD===
 You <b><color=\#FF1E35>cowardly</color></b> run away. 
+->OVER
+
+===OVER===
 Game Over!
-    
 
-
--> END
+->END
