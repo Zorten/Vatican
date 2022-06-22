@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
+public enum AllTheRooms {FirstEntrance, FirstHallway, FirstLivingRoom, FirstKitchen, FirstOffice, FirstCloset, FirstBathroom, Basement, SecondHallway, SecondNursery, SecondMasterBedroom, SecondFullBathroom, SecondBalcony}
+
 public class Rooms : MonoBehaviour
 {
     private int positioning = 5;
     [SerializeField] private HomeAndTime whatDay;
-    private string location = "First Floor Hallway";
-    private Button moveRoomButton;
-    private Text currRoomText;
+    private AllTheRooms location = AllTheRooms.FirstEntrance;
+    [SerializeField] private Button moveRoomButton;
+    [SerializeField] private Text currRoomText;
     // private Items sCrux = new SilverCrux();
     // private Items cam = new Camera();
     // private Items therM = new Thermometer();
@@ -26,18 +28,49 @@ public class Rooms : MonoBehaviour
     [SerializeField] private Bedsheets bSheet;
     [SerializeField] private WoodCrux wCrux;
     [SerializeField] private Notebook nBook;
-    private Items[] firstfloorhallwayobjects = new Items[10];
-    private int actualLength = 0;
-    
+
     public void displayItems(){
         //Debug.Log("helo dis works");
-        if(location == "First Floor Hallway"){
-            for(int i=0; i<actualLength; ++i){
-                GameObject button1 = new GameObject();
-                button1.AddComponent<Button>().onClick.AddListener(firstfloorhallwayobjects[i].pickupItem);
-                //button1.AddComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 5);
-                button1.transform.position = new Vector3(0, 0, positioning);
-            }
+        switch(location){
+            case AllTheRooms.FirstEntrance:
+                //show the button
+            break;
+
+            case AllTheRooms.FirstHallway:
+            break;
+
+            case AllTheRooms.FirstLivingRoom:
+            break;
+
+            case AllTheRooms.FirstKitchen:
+            break;
+
+            case AllTheRooms.FirstOffice:
+            break;
+
+            case AllTheRooms.FirstCloset:
+            break;
+
+            case AllTheRooms.FirstBathroom:
+            break;
+
+            case AllTheRooms.Basement:
+            break;
+
+            case AllTheRooms.SecondHallway:
+            break;
+
+            case AllTheRooms.SecondNursery:
+            break;
+
+            case AllTheRooms.SecondMasterBedroom:
+            break;
+
+            case AllTheRooms.SecondFullBathroom:
+            break;
+
+            case AllTheRooms.SecondBalcony:
+            break;
         }
     }
     public void moveRooms(){
@@ -47,10 +80,6 @@ public class Rooms : MonoBehaviour
     void Start()
     {
         moveRooms();
-        if(whatDay.getDays() == 1){
-            firstfloorhallwayobjects[0] = sCrux;
-            actualLength = 1;
-        }
     }
 
     // Update is called once per frame
