@@ -11,6 +11,6 @@ INCLUDE globals.ink
 ===ENTRANCE_ROOM===
     
     
-    
+~setButtonActive()
 -> END
     

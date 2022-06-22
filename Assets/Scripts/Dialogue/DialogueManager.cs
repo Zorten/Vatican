@@ -97,6 +97,7 @@ public class DialogueManager : MonoBehaviour
         dialogueVariables.StartListening(currentStory);
         currentStory.BindExternalFunction ("setButtonActive", () => {
             CurrentIcon.SetActive(true);
+            continueIcon.SetActive(false);
         });
 
         ContinueStory();

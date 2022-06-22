@@ -23,7 +23,6 @@ public class DialogueTrigger : MonoBehaviour//, IPointerClickHandler
     int index = 0;
     private void Awake() 
     {
-       // int index = 0;
         CurrentIcon.SetActive(true);
         ContinueIcon.SetActive(false);
         cont = false;
@@ -34,14 +33,11 @@ public class DialogueTrigger : MonoBehaviour//, IPointerClickHandler
     {
         if (cont && !DialogueManager.GetInstance().dialogueIsPlaying) 
         {
-            Debug.Log("boutta call dialogue manager");
             cont = false;
             CurrentIcon.SetActive(false);
             ContinueIcon.SetActive(true);
-            //int index = 0;
             DialogueManager.GetInstance().EnterDialogueMode(inkJSON[index]);
             index++;
-            //DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
         }
     
     }
