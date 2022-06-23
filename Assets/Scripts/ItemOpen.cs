@@ -13,39 +13,62 @@ public class ItemOpen : MonoBehaviour
     [SerializeField] private Text roomDescText;
     [SerializeField] private Text pickupText;
     [SerializeField] private Text invText;
+
+    [SerializeField] private SilverCrux sCrux;
+    [SerializeField] private Camera cam;
+    [SerializeField] private Thermometer therM;
+    [SerializeField] private TapeRecorder tRec;
+    [SerializeField] private Food food;
+    [SerializeField] private Bedsheets bSheet;
+    [SerializeField] private WoodCrux wCrux;
+    [SerializeField] private Notebook nBook;
+    [SerializeField] private Film film;
+    [SerializeField] private HolyWater hWater;
     // Start is called before the first frame update
     public void showObj(){
         itemCanvasFullOfButtons.SetActive(false);
         individualitemcanvas.SetActive(true);
         if(itemButton.name[this.name.Length-1] == '0'){
-            whichClicked = new SilverCrux();
+            whichClicked = sCrux;
         }
-        if(this.name[this.name.Length-1] == '1'){
-            whichClicked = new Camera();
+        else if(this.name[this.name.Length-1] == '1'){
+            whichClicked = cam;
         }
-        if(this.name[this.name.Length-1] == '2'){
-            whichClicked = new Thermometer();
+        else if(this.name[this.name.Length-1] == '2'){
+            whichClicked = therM;
         }
-        if(this.name[this.name.Length-1] == '3'){
-            whichClicked = new TapeRecorder();
+        else if(this.name[this.name.Length-1] == '3'){
+            whichClicked = tRec;
         }
-        if(this.name[this.name.Length-1] == '4'){
-            whichClicked = new Food();
+        else if(this.name[this.name.Length-1] == '4'){
+            whichClicked = food;
         }
-        if(this.name[this.name.Length-1] == '5'){
-            whichClicked = new Bedsheets();
+        else if(this.name[this.name.Length-1] == '5'){
+            whichClicked = bSheet;
         }
-        if(this.name[this.name.Length-1] == '6'){
-            whichClicked = new WoodCrux();
+        else if(this.name[this.name.Length-1] == '6'){
+            whichClicked = wCrux;
         }
-        if(this.name[this.name.Length-1] == '7'){
-            whichClicked = new Notebook();
+        else if(this.name[this.name.Length-1] == '7'){
+            whichClicked = nBook;
         }
+        else if(this.name[this.name.Length-1] == '8'){
+            whichClicked = film;
+        }
+        else if(this.name[this.name.Length-1] == '9'){
+            whichClicked = hWater;
+        }
+
         if(whichClicked.getPickupStatus() == true){
             nameText.text = whichClicked.getName();
             roomDescText.text = whichClicked.getInRoomDesc();
             pickupText.text = whichClicked.getOnPickupText();
             invText.text = whichClicked.getInventoryText();
+        }else{
+            nameText.text = "Unknown";
+            roomDescText.text = "Unknown";
+            pickupText.text = "Unknown";
+            invText.text = "Unknown";
         }
     }
     public void Start()

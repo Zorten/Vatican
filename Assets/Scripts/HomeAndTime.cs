@@ -14,6 +14,7 @@ public class HomeAndTime : MonoBehaviour
     public popUpStatus statusScreen;
     private int tripsHome = 0;
     private int days = 1;
+    [SerializeField] TapeRecorder tRec;
 
     public void buttonClickPos(){
         tripsHome++;
@@ -25,6 +26,9 @@ public class HomeAndTime : MonoBehaviour
         energyText.text = "Energy: " + player.HowMuchEnergy();
         //statusScreen.popUp();
         //statusScreen.updateText(player.HowMuchEnergy());
+        if(days == 2){
+            tRec.pickupItem();
+        }
         if(tripsHome >= 4){
             tripsHome = 0;
             days++;
