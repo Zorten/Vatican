@@ -34,10 +34,16 @@ public class GeneralThingsThatHappen : MonoBehaviour
     {
         
     }
+    
+    void exorcismTime(){
+
+    }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(criteriaLeft == 0){
+            exorcismTime();
+        }
     }
 }
