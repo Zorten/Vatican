@@ -3,10 +3,7 @@ INCLUDE globals.ink
 -> Intro
 
 === Intro ===
-“On June 6th, 1956, the body of the Pope was discovered in the Vatican. The autopsy reported that he had died from asphyxiation. Despite this, there were no bruise marks from the suspected strangulation. Even stranger, the room was found in a disastrous state, showing signs of a struggle between the Pope and the suspect...
-
-The investigation is still on-going, but the sudden death of the Pope has left the state of Europe in dread and confusion…” 
-
+“On June 6th, 1956, the body of the Pope was discovered in the Vatican. The autopsy reported that he had died from asphyxiation. Despite this, there were no bruise marks from the suspected strangulation. Even stranger, the room was found in a disastrous state, showing signs of a struggle between the Pope and the suspect. The investigation is still on-going, but the sudden death of the Pope has left the state of Europe in dread and confusion…” 
 It’s been a week since the Pope died. With the church left in chaos, many cases are being left unchecked until the situation is resolved. Even so, it is your duty as a priest to answer the calls of those in need. You recently received a phone call from your close friend, Alessandro. From what you can remember before the call abruptly ended, he needed your help desperately.  
 You peer out the window of the car. The series of bricked apartments turn into blurred afterimages as you speed up. Minutes turn to hours. A question lingers in your mind. <i>Why was Alessandro asking for help?</i> Alessandro was the last person to ever ask for help. He always remained steadfast and stubborn until the very end. And for him to beg for help? It’s suspicious to say the least. 
 Nonetheless, the Bianchi residence awaits you. You approach the neighborhood. As you slide your hands across the steering wheel, a sort of instinct takes over. You know by heart the exact degree by which to turn the wheel. The curves of the street are ingrained in you. They remind you of the Bianchi family, and those warm memories take over the anxiety. 
