@@ -67,6 +67,7 @@ public class Rooms : MonoBehaviour
                 pickupButton2.onClick.RemoveAllListeners();
                 pickupButton1Text.text = "";
                 pickupButton2Text.text = "";
+                //sB.SetActive(false);
             break;
 
             case (AllTheRooms)1:

@@ -36,7 +36,10 @@ public class GeneralThingsThatHappen : MonoBehaviour
     }
     
     void exorcismTime(){
-
+        //Possible fails: die to fire, mom dies, mom kills you when she gets out
+        //Have to do all exorcism prayers in a certain amount of time
+        //every single passage of time something has a chance of happening
+        //priority: mother, older sister, younger sister
     }
 
     // Update is called once per frame
