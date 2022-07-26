@@ -67,7 +67,19 @@ public class Rooms : MonoBehaviour
                 pickupButton2.onClick.RemoveAllListeners();
                 pickupButton1Text.text = "";
                 pickupButton2Text.text = "";
-                //sB.SetActive(false);
+                fE.gameObject.SetActive(false);
+                fH.gameObject.SetActive(true);
+                fLR.gameObject.SetActive(false);
+                fK.gameObject.SetActive(false);
+                fO.gameObject.SetActive(false);
+                fC.gameObject.SetActive(false);
+                fB.gameObject.SetActive(false);
+                Bas.gameObject.SetActive(false);
+                sH.gameObject.SetActive(false);
+                sN.gameObject.SetActive(false);
+                sMB.gameObject.SetActive(false);
+                sFB.gameObject.SetActive(false);
+                sB.gameObject.SetActive(false);
             break;
 
             case (AllTheRooms)1:
@@ -75,6 +87,19 @@ public class Rooms : MonoBehaviour
                 pickupButton2.onClick.RemoveAllListeners();
                 pickupButton1Text.text = "";
                 pickupButton2Text.text = "";
+                fE.gameObject.SetActive(true);
+                fH.gameObject.SetActive(false);
+                fLR.gameObject.SetActive(true);
+                fK.gameObject.SetActive(true);
+                fO.gameObject.SetActive(true);
+                fC.gameObject.SetActive(true);
+                fB.gameObject.SetActive(true);
+                Bas.gameObject.SetActive(true);
+                sH.gameObject.SetActive(true);
+                sN.gameObject.SetActive(false);
+                sMB.gameObject.SetActive(false);
+                sFB.gameObject.SetActive(false);
+                sB.gameObject.SetActive(false);
             break;
 
             case (AllTheRooms)2:
@@ -82,6 +107,19 @@ public class Rooms : MonoBehaviour
                 pickupButton2.onClick.RemoveAllListeners();
                 pickupButton1Text.text = "";
                 pickupButton2Text.text = "";
+                fE.gameObject.SetActive(false);
+                fH.gameObject.SetActive(true);
+                fLR.gameObject.SetActive(false);
+                fK.gameObject.SetActive(false);
+                fO.gameObject.SetActive(false);
+                fC.gameObject.SetActive(false);
+                fB.gameObject.SetActive(false);
+                Bas.gameObject.SetActive(false);
+                sH.gameObject.SetActive(false);
+                sN.gameObject.SetActive(false);
+                sMB.gameObject.SetActive(false);
+                sFB.gameObject.SetActive(false);
+                sB.gameObject.SetActive(false);
             break;
 
             case (AllTheRooms)3:
@@ -95,6 +133,19 @@ public class Rooms : MonoBehaviour
                     pickupButton2.onClick.AddListener(delegate{pickupTheActualItems(pickupButton2Text, hWater);});
                     pickupButton2Text.text = "Pick up Empty Bottle.";
                 }
+                fE.gameObject.SetActive(false);
+                fH.gameObject.SetActive(true);
+                fLR.gameObject.SetActive(false);
+                fK.gameObject.SetActive(false);
+                fO.gameObject.SetActive(false);
+                fC.gameObject.SetActive(false);
+                fB.gameObject.SetActive(false);
+                Bas.gameObject.SetActive(false);
+                sH.gameObject.SetActive(false);
+                sN.gameObject.SetActive(false);
+                sMB.gameObject.SetActive(false);
+                sFB.gameObject.SetActive(false);
+                sB.gameObject.SetActive(false);
             break;
 
             case (AllTheRooms)4:
@@ -105,6 +156,19 @@ public class Rooms : MonoBehaviour
                     pickupButton1Text.text = "Pick up Camera.";
                 }
                 pickupButton2Text.text = "";
+                fE.gameObject.SetActive(false);
+                fH.gameObject.SetActive(true);
+                fLR.gameObject.SetActive(false);
+                fK.gameObject.SetActive(false);
+                fO.gameObject.SetActive(false);
+                fC.gameObject.SetActive(false);
+                fB.gameObject.SetActive(false);
+                Bas.gameObject.SetActive(false);
+                sH.gameObject.SetActive(false);
+                sN.gameObject.SetActive(false);
+                sMB.gameObject.SetActive(false);
+                sFB.gameObject.SetActive(false);
+                sB.gameObject.SetActive(false);
             break;
 
             case (AllTheRooms)5:
@@ -112,6 +176,19 @@ public class Rooms : MonoBehaviour
                 pickupButton2.onClick.RemoveAllListeners();
                 pickupButton1Text.text = "";
                 pickupButton2Text.text = "";
+                fE.gameObject.SetActive(false);
+                fH.gameObject.SetActive(true);
+                fLR.gameObject.SetActive(false);
+                fK.gameObject.SetActive(false);
+                fO.gameObject.SetActive(false);
+                fC.gameObject.SetActive(false);
+                fB.gameObject.SetActive(false);
+                Bas.gameObject.SetActive(false);
+                sH.gameObject.SetActive(false);
+                sN.gameObject.SetActive(false);
+                sMB.gameObject.SetActive(false);
+                sFB.gameObject.SetActive(false);
+                sB.gameObject.SetActive(false);
             break;
 
             case (AllTheRooms)6:
@@ -119,6 +196,19 @@ public class Rooms : MonoBehaviour
                 pickupButton2.onClick.RemoveAllListeners();
                 pickupButton1Text.text = "";
                 pickupButton2Text.text = "";
+                fE.gameObject.SetActive(false);
+                fH.gameObject.SetActive(true);
+                fLR.gameObject.SetActive(false);
+                fK.gameObject.SetActive(false);
+                fO.gameObject.SetActive(false);
+                fC.gameObject.SetActive(false);
+                fB.gameObject.SetActive(false);
+                Bas.gameObject.SetActive(false);
+                sH.gameObject.SetActive(false);
+                sN.gameObject.SetActive(false);
+                sMB.gameObject.SetActive(false);
+                sFB.gameObject.SetActive(false);
+                sB.gameObject.SetActive(false);
             break;
 
             case (AllTheRooms)7:
@@ -126,6 +216,19 @@ public class Rooms : MonoBehaviour
                 pickupButton2.onClick.RemoveAllListeners();
                 pickupButton1Text.text = "";
                 pickupButton2Text.text = "";
+                fE.gameObject.SetActive(false);
+                fH.gameObject.SetActive(true);
+                fLR.gameObject.SetActive(false);
+                fK.gameObject.SetActive(false);
+                fO.gameObject.SetActive(false);
+                fC.gameObject.SetActive(false);
+                fB.gameObject.SetActive(false);
+                Bas.gameObject.SetActive(false);
+                sH.gameObject.SetActive(false);
+                sN.gameObject.SetActive(false);
+                sMB.gameObject.SetActive(false);
+                sFB.gameObject.SetActive(false);
+                sB.gameObject.SetActive(false);
             break;
 
             case (AllTheRooms)8:
@@ -133,6 +236,19 @@ public class Rooms : MonoBehaviour
                 pickupButton2.onClick.RemoveAllListeners();
                 pickupButton1Text.text = "";
                 pickupButton2Text.text = "";
+                fE.gameObject.SetActive(false);
+                fH.gameObject.SetActive(true);
+                fLR.gameObject.SetActive(false);
+                fK.gameObject.SetActive(false);
+                fO.gameObject.SetActive(false);
+                fC.gameObject.SetActive(false);
+                fB.gameObject.SetActive(false);
+                Bas.gameObject.SetActive(false);
+                sH.gameObject.SetActive(false);
+                sN.gameObject.SetActive(true);
+                sMB.gameObject.SetActive(true);
+                sFB.gameObject.SetActive(true);
+                sB.gameObject.SetActive(true);
             break;
 
             case (AllTheRooms)9:
@@ -143,6 +259,19 @@ public class Rooms : MonoBehaviour
                     pickupButton1Text.text = "Pick up Silver Crucifix.";
                 }
                 pickupButton2Text.text = "";
+                fE.gameObject.SetActive(false);
+                fH.gameObject.SetActive(false);
+                fLR.gameObject.SetActive(false);
+                fK.gameObject.SetActive(false);
+                fO.gameObject.SetActive(false);
+                fC.gameObject.SetActive(false);
+                fB.gameObject.SetActive(false);
+                Bas.gameObject.SetActive(false);
+                sH.gameObject.SetActive(true);
+                sN.gameObject.SetActive(false);
+                sMB.gameObject.SetActive(false);
+                sFB.gameObject.SetActive(false);
+                sB.gameObject.SetActive(false);
             break;
 
             case (AllTheRooms)10:
@@ -156,6 +285,19 @@ public class Rooms : MonoBehaviour
                     pickupButton2.onClick.AddListener(delegate{pickupTheActualItems(pickupButton2Text ,wCrux);});
                     pickupButton2Text.text = "Pick up Wooden Crucifix.";
                 }
+                fE.gameObject.SetActive(false);
+                fH.gameObject.SetActive(false);
+                fLR.gameObject.SetActive(false);
+                fK.gameObject.SetActive(false);
+                fO.gameObject.SetActive(false);
+                fC.gameObject.SetActive(false);
+                fB.gameObject.SetActive(false);
+                Bas.gameObject.SetActive(false);
+                sH.gameObject.SetActive(true);
+                sN.gameObject.SetActive(false);
+                sMB.gameObject.SetActive(false);
+                sFB.gameObject.SetActive(false);
+                sB.gameObject.SetActive(false);
             break;
 
             case (AllTheRooms)11:
@@ -163,6 +305,19 @@ public class Rooms : MonoBehaviour
                 pickupButton2.onClick.RemoveAllListeners();
                 pickupButton1Text.text = "";
                 pickupButton2Text.text = "";
+                fE.gameObject.SetActive(false);
+                fH.gameObject.SetActive(false);
+                fLR.gameObject.SetActive(false);
+                fK.gameObject.SetActive(false);
+                fO.gameObject.SetActive(false);
+                fC.gameObject.SetActive(false);
+                fB.gameObject.SetActive(false);
+                Bas.gameObject.SetActive(false);
+                sH.gameObject.SetActive(true);
+                sN.gameObject.SetActive(false);
+                sMB.gameObject.SetActive(false);
+                sFB.gameObject.SetActive(false);
+                sB.gameObject.SetActive(false);
             break;
 
             case (AllTheRooms)12:
@@ -173,6 +328,19 @@ public class Rooms : MonoBehaviour
                     pickupButton1Text.text = "Pick up Thermometer.";
                 }
                 pickupButton2Text.text = "";
+                fE.gameObject.SetActive(false);
+                fH.gameObject.SetActive(false);
+                fLR.gameObject.SetActive(false);
+                fK.gameObject.SetActive(false);
+                fO.gameObject.SetActive(false);
+                fC.gameObject.SetActive(false);
+                fB.gameObject.SetActive(false);
+                Bas.gameObject.SetActive(false);
+                sH.gameObject.SetActive(true);
+                sN.gameObject.SetActive(false);
+                sMB.gameObject.SetActive(false);
+                sFB.gameObject.SetActive(false);
+                sB.gameObject.SetActive(false);
             break;
         }
     }
