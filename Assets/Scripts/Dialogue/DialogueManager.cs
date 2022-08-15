@@ -9,7 +9,7 @@ public class DialogueManager : MonoBehaviour
 {
 
     [Header("Params")]
-    [SerializeField] private float typingSpeed = 0.04f;
+    [SerializeField] private float typingSpeed = 0.06f;
 
     [Header("Load Globals JSON")]
     [SerializeField] private TextAsset loadGlobalsJSON;
@@ -19,6 +19,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject continueIcon;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private GameObject CurrentIcon;
+
+    private Animator layoutAnimator;
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
@@ -34,6 +36,10 @@ public class DialogueManager : MonoBehaviour
 
 
     private static DialogueManager instance;
+
+    private const string LAYOUT_TAG = "layout";
+
+    private const string ROOM_TAG = "room";
 
     private DialogueVariables dialogueVariables;
 
@@ -57,6 +63,9 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(true);
+
+        //get the layout animator
+        layoutAnimator = dialoguePanel.GetComponent<Animator>();
 
         
         // get all of the choices text 
@@ -125,10 +134,45 @@ public class DialogueManager : MonoBehaviour
                 StopCoroutine(displayLineCoroutine);
             }
             displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
+
+            //Handle tags
+            HandleTags(currentStory.currentTags);
+
         }
         else 
         {
             StartCoroutine(ExitDialogueMode());
+        }
+    }
+
+    private void HandleTags(List<string> currentTags)
+    {
+        //Loop through each tag and handle accordingly
+        foreach (string tag in currentTags)
+        {
+            //parse the tag
+            string[] splitTag = tag.Split(':');
+            if (splitTag.Length != 2)
+            {
+                Debug.LogError("Tag could not be parsed appropriately: " + tag);
+            }
+            string tagkey = splitTag[0].Trim();
+            string tagValue = splitTag[1].Trim();
+
+            switch (tagkey)
+            {
+                case LAYOUT_TAG:
+                    layoutAnimator.Play(tagValue);
+                    break;
+                
+                case ROOM_TAG:
+                    Debug.Log("room = " + tagValue);
+                    break;
+
+                default:
+                    Debug.LogWarning("Tag came in but not handled: " + tag);
+                    break;
+            }
         }
     }
 
