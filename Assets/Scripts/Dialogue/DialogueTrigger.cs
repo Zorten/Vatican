@@ -36,8 +36,14 @@ public class DialogueTrigger : MonoBehaviour//, IPointerClickHandler
             cont = false;
             CurrentIcon.SetActive(false);
             ContinueIcon.SetActive(true);
-            DialogueManager.GetInstance().EnterDialogueMode(inkJSON[index]);
-            index++;
+            if (index < inkJSON.Length){
+                DialogueManager.GetInstance().EnterDialogueMode(inkJSON[index]);
+                index++;
+            }
+            else
+            {
+                Debug.LogError("No json found to play");
+            }
         }
     
     }
