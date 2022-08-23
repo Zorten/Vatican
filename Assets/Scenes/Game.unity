@@ -2839,7 +2839,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 96, y: 130.50003}
+  m_AnchoredPosition: {x: 90, y: -15}
   m_SizeDelta: {x: 180, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &959296123
@@ -5179,6 +5179,7 @@ GameObject:
   - component: {fileID: 2092011364}
   - component: {fileID: 2092011366}
   - component: {fileID: 2092011365}
+  - component: {fileID: 2092011367}
   m_Layer: 5
   m_Name: DialogueText
   m_TagString: Untagged
@@ -5202,8 +5203,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -216, y: 90}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 4.4445, y: 4.9071}
+  m_SizeDelta: {x: 640.889, y: 220.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2092011365
 MonoBehaviour:
@@ -5225,7 +5226,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: New text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5288,7 +5289,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -7, y: -6.580427, z: -445, w: -175}
+  m_margin: {x: 0.048889145, y: -1.4552288, z: -0.57938385, w: -0.21479414}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5302,6 +5303,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2092011363}
   m_CullTransparentMesh: 1
+--- !u!114 &2092011367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092011363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b171baebdec3ccb40993cc090fd98e69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2113332349
 GameObject:
   m_ObjectHideFlags: 0

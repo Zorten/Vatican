@@ -1,11 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
 
-public class DialogueManager : MonoBehaviour
+public class DialogueManager : MonoBehaviour//, IPointerClickHandler
 {
 
     [Header("Params")]
@@ -33,6 +35,7 @@ public class DialogueManager : MonoBehaviour
     public bool dialogueIsPlaying { get; private set; }
 
     private bool canContinueToNextLine = false;
+    private bool boxChoices = true; 
 
     private Coroutine displayLineCoroutine;
 
@@ -165,6 +168,12 @@ public class DialogueManager : MonoBehaviour
             {
                 case LAYOUT_TAG:
                     layoutAnimator.Play(tagValue);
+                    if (tagValue == "navigation"){
+                        boxChoices = false;
+                    }
+                    else{
+                        boxChoices = true;
+                    }
                     break;
                 
                 case ROOM_TAG:
@@ -219,7 +228,11 @@ public class DialogueManager : MonoBehaviour
         }
 
         continueIcon.SetActive(true);
-        //display choices, if any
+        //display choices, if any, and if in dialogue mode
+
+        // if (boxChoices){
+        //     DisplayChoices();
+        // }
         DisplayChoices();
         canContinueToNextLine = true;
 
@@ -292,9 +305,22 @@ public class DialogueManager : MonoBehaviour
         return variableValue;
     }
 
-    // public void setButtonActive(GameObject icon){
-    //     icon.SetActive(true);
+    // public void OnPointerClick(PointerEventData eventData){
+    //     if (eventData.button == PointerEventData.InputButton.Left)
+    //     {
+    //         int linkIndex = (TMP_TextUtilities.FindIntersectingLink(dialogueText, Input.mousePosition, null));
 
+    //         if (linkIndex > -1){
+    //             TMP_LinkInfo linkInfo = dialogueText.textInfo.linkInfo[linkIndex];
+    //             string linkId = linkInfo.GetLinkID();
+    //             Debug.Log("You chose: " + linkId + ". Which has linkindex: " + linkIndex);
+    //             //MAKE CHOICE HERE -- how do I pass this onto DialogueManager? linkIndex will correspond with choiceIndex 
+
+    //         }
+    //         else{
+    //             Debug.Log("Not a link");
+    //         }
+    //     }
     // }
 
 }

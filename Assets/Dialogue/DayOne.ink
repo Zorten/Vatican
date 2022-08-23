@@ -9,7 +9,7 @@ You grip the doorknob of the home. You feel your eyelids grow heavy. Your legs b
     
 ===ENTRANCE_ROOM===
 #layout:navigation #room:Entrance Room
-The light drains from the room as you shut the door behind you. The doorknob is wet with blood, and you instinctively curl your fingers with a shudder. A horrific stench seems to permeate the air, coating the roof of your mouth. Your hands start to become numb. It’s cold, and the blood on your hand is drying fast. There's only the <b><color=\#000000>front door</color></b> behind you and an <b><color=\#000000>open doorway</color></b> before you, leading deeper into the house. 
+The light drains from the room as you shut the door behind you. The doorknob is wet with blood, and you instinctively curl your fingers with a shudder. A horrific stench seems to permeate the air, coating the roof of your mouth. Your hands start to become numb. It’s cold, and the blood on your hand is drying fast. There's only the <link="frontdoor"><b><color=\#000000>front door</link></b></color> behind you and an <link="doorway"><b><color=\#000000>open doorway</link></color></b> before you, leading deeper into the house. 
 
     +[Front door]
         ->FRONT_DOOR
@@ -28,7 +28,7 @@ You decide to leave for fresh air. You need more time to steel yourself for this
 
 ===DOWNSTAIRS_HALLWAY===
 #room:Downstairs Hallway
-At the end of the hallway is a staircase to the <b><color=\#000000>upstairs hallway</color></b>. The light of the lamp glistens upon the shiny wooden floor. Near you, the springs of the grandfather clock ticking echo throughout the quiet home. It goes into the <b><color=\#000000>living room</color></b>. Looking into the hallway, you see doors to the <b><color=\#000000>bathroom</color></b>, <b><color=\#000000>closet</color></b>, <b><color=\#000000>office</color></b>, and <b><color=\#000000>basement</color></b>. There’s something eerie about the basement door. Across from the bathroom door is the entryway to the <b><color=\#000000>kitchen</color></b>.
+At the end of the hallway is a staircase to the <link="upstairshall"><b><color=\#000000>upstairs hallway</link></color></b>. The light of the lamp glistens upon the shiny wooden floor. Near you, the springs of the grandfather clock ticking echo throughout the quiet home. It goes into the <link="livingroom"><b><color=\#000000>living room</link></color></b>. Looking into the hallway, you see doors to the <link="bathroom"><b><color=\#000000>bathroom</link></color></b>, <link="closet"><b><color=\#000000>closet</link></color></b>, <link="office"><b><color=\#000000>office</link></color></b>, and <link="basement"><b><color=\#000000>basement</link></color></b>. There’s something eerie about the basement door. Across from the bathroom door is the entryway to the <link="kitchen"><b><color=\#000000>kitchen</link></color></b>.
     
     +[Upstairs Hallway]
         ->UPSTAIRS_HALLWAY
