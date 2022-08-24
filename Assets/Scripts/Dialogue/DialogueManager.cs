@@ -46,6 +46,8 @@ public class DialogueManager : MonoBehaviour//, IPointerClickHandler
 
     private const string ROOM_TAG = "room";
 
+    private const string CHOICE_TAG = "choice";
+
     private DialogueVariables dialogueVariables;
 
     private void Awake() 
@@ -168,16 +170,19 @@ public class DialogueManager : MonoBehaviour//, IPointerClickHandler
             {
                 case LAYOUT_TAG:
                     layoutAnimator.Play(tagValue);
-                    if (tagValue == "navigation"){
+                    break;
+                
+                case ROOM_TAG:
+                    roomNameText.text = tagValue;
+                    break;
+
+                case CHOICE_TAG:
+                    if (tagValue == "link"){
                         boxChoices = false;
                     }
                     else{
                         boxChoices = true;
                     }
-                    break;
-                
-                case ROOM_TAG:
-                    roomNameText.text = tagValue;
                     break;
 
                 default:
@@ -230,10 +235,9 @@ public class DialogueManager : MonoBehaviour//, IPointerClickHandler
         continueIcon.SetActive(true);
         //display choices, if any, and if in dialogue mode
 
-        // if (boxChoices){
-        //     DisplayChoices();
-        // }
-        DisplayChoices();
+        if (boxChoices){
+            DisplayChoices();
+        }
         canContinueToNextLine = true;
 
     }
