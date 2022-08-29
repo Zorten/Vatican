@@ -7,7 +7,7 @@ using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
 
-public class DialogueManager : MonoBehaviour//, IPointerClickHandler
+public class DialogueManager : MonoBehaviour
 {
 
     [Header("Params")]
@@ -29,6 +29,8 @@ public class DialogueManager : MonoBehaviour//, IPointerClickHandler
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
+    [SerializeField] private GameObject ReturnChoice;
+    [SerializeField] private TextMeshProUGUI returnText;
 
 
     private Story currentStory;
@@ -47,6 +49,8 @@ public class DialogueManager : MonoBehaviour//, IPointerClickHandler
     private const string ROOM_TAG = "room";
 
     private const string CHOICE_TAG = "choice";
+
+    private const string RETURN_TAG = "return";
 
     private DialogueVariables dialogueVariables;
 
@@ -185,6 +189,15 @@ public class DialogueManager : MonoBehaviour//, IPointerClickHandler
                     }
                     break;
 
+                case RETURN_TAG:
+                    if (tagValue == "true"){
+                        ReturnButtonDisplay();
+                    }
+                    else{
+                        ReturnChoice.SetActive(false);
+                    }
+                    break;
+
                 default:
                     Debug.LogWarning("Tag came in but not handled: " + tag);
                     break;
@@ -239,6 +252,40 @@ public class DialogueManager : MonoBehaviour//, IPointerClickHandler
             DisplayChoices();
         }
         canContinueToNextLine = true;
+
+    }
+
+    private void ReturnButtonDisplay()
+    {
+        List<Choice> currentChoices = currentStory.currentChoices;
+        Debug.Log("Choices count: " + currentChoices.Count);
+        int index = currentChoices.Count - 1;
+        ReturnChoice.SetActive(true);
+        returnText.text = currentChoices[index].text;
+
+        StartCoroutine(SelectReturnButton());
+    }
+
+    private IEnumerator SelectReturnButton()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        yield return new WaitForEndOfFrame();
+        EventSystem.current.SetSelectedGameObject(ReturnChoice.gameObject);
+    }
+
+    public void ReturnButtonChoose(){
+        List<Choice> currentChoices = currentStory.currentChoices;
+        int index = currentChoices.Count - 1;
+
+        if (canContinueToNextLine)
+        {
+            currentStory.ChooseChoiceIndex(index);
+            InputManager.GetInstance().RegisterSubmitPressed(); // this is specific to my InputManager script
+            ReturnChoice.SetActive(false);
+            ContinueStory();
+
+
+        }
 
     }
 
@@ -308,23 +355,5 @@ public class DialogueManager : MonoBehaviour//, IPointerClickHandler
         }
         return variableValue;
     }
-
-    // public void OnPointerClick(PointerEventData eventData){
-    //     if (eventData.button == PointerEventData.InputButton.Left)
-    //     {
-    //         int linkIndex = (TMP_TextUtilities.FindIntersectingLink(dialogueText, Input.mousePosition, null));
-
-    //         if (linkIndex > -1){
-    //             TMP_LinkInfo linkInfo = dialogueText.textInfo.linkInfo[linkIndex];
-    //             string linkId = linkInfo.GetLinkID();
-    //             Debug.Log("You chose: " + linkId + ". Which has linkindex: " + linkIndex);
-    //             //MAKE CHOICE HERE -- how do I pass this onto DialogueManager? linkIndex will correspond with choiceIndex 
-
-    //         }
-    //         else{
-    //             Debug.Log("Not a link");
-    //         }
-    //     }
-    // }
 
 }
