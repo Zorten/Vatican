@@ -4264,6 +4264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inkJSON:
+  - {fileID: 4900000, guid: 0030e515bb7cc034fb0d1ffec2db5328, type: 3}
   - {fileID: 4900000, guid: 20aedc47b23e35f4e843541be240b23a, type: 3}
   ContinueIcon: {fileID: 1839484264}
   CurrentIcon: {fileID: 1649483730}

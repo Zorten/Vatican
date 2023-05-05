@@ -1,7 +1,7 @@
 INCLUDE globals.ink
 
 #layout:dialogue #room:none #return:false
-You grip the doorknob of the home. You feel your eyelids grow heavy. Your legs begin to buckle at the weight of your body and your head sways from the sudden exhaustion. It's as if the home is draining the <b><color=\#0CAC5C>energy</color></b> out of you. Alessandro lingers in the back of your mind as the will to enter the home fleets.
+
 
 <b><color=\#B80000>Entrance Room DAY ONE</color></b>
 
