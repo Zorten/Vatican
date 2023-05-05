@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using TMPro;
 using Ink.Runtime;
@@ -9,7 +11,7 @@ public class DialogueManager : MonoBehaviour
 {
 
     [Header("Params")]
-    [SerializeField] private float typingSpeed = 0.04f;
+    [SerializeField] private float typingSpeed = 0.06f;
 
     [Header("Load Globals JSON")]
     [SerializeField] private TextAsset loadGlobalsJSON;
@@ -18,21 +20,37 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private GameObject continueIcon;
     [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private GameObject CurrentIcon;
+
+    [SerializeField] private TextMeshProUGUI roomNameText;
+
+    private Animator layoutAnimator;
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
+    [SerializeField] private GameObject ReturnChoice;
+    [SerializeField] private TextMeshProUGUI returnText;
 
 
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
 
     private bool canContinueToNextLine = false;
+    private bool boxChoices = true; 
 
     private Coroutine displayLineCoroutine;
 
 
     private static DialogueManager instance;
+
+    private const string LAYOUT_TAG = "layout";
+
+    private const string ROOM_TAG = "room";
+
+    private const string CHOICE_TAG = "choice";
+
+    private const string RETURN_TAG = "return";
 
     private DialogueVariables dialogueVariables;
 
@@ -56,6 +74,9 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(true);
+
+        //get the layout animator
+        layoutAnimator = dialoguePanel.GetComponent<Animator>();
 
         
         // get all of the choices text 
@@ -94,6 +115,10 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(true);
         
         dialogueVariables.StartListening(currentStory);
+        currentStory.BindExternalFunction ("setButtonActive", () => {
+            CurrentIcon.SetActive(true);
+            continueIcon.SetActive(false);
+        });
 
         ContinueStory();
     }
@@ -120,10 +145,63 @@ public class DialogueManager : MonoBehaviour
                 StopCoroutine(displayLineCoroutine);
             }
             displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
+
+            //Handle tags
+            HandleTags(currentStory.currentTags);
+
         }
         else 
         {
             StartCoroutine(ExitDialogueMode());
+        }
+    }
+
+    private void HandleTags(List<string> currentTags)
+    {
+        //Loop through each tag and handle accordingly
+        foreach (string tag in currentTags)
+        {
+            //parse the tag
+            string[] splitTag = tag.Split(':');
+            if (splitTag.Length != 2)
+            {
+                Debug.LogError("Tag could not be parsed appropriately: " + tag);
+            }
+            string tagkey = splitTag[0].Trim();
+            string tagValue = splitTag[1].Trim();
+
+            switch (tagkey)
+            {
+                case LAYOUT_TAG:
+                    layoutAnimator.Play(tagValue);
+                    break;
+                
+                case ROOM_TAG:
+                    roomNameText.text = tagValue;
+                    break;
+
+                case CHOICE_TAG:
+                    if (tagValue == "link"){
+                        boxChoices = false;
+                    }
+                    else{
+                        boxChoices = true;
+                    }
+                    break;
+
+                case RETURN_TAG:
+                    if (tagValue == "true"){
+                        ReturnButtonDisplay();
+                    }
+                    else{
+                        ReturnChoice.SetActive(false);
+                    }
+                    break;
+
+                default:
+                    Debug.LogWarning("Tag came in but not handled: " + tag);
+                    break;
+            }
         }
     }
 
@@ -168,9 +246,46 @@ public class DialogueManager : MonoBehaviour
         }
 
         continueIcon.SetActive(true);
-        //display choices, if any
-        DisplayChoices();
+        //display choices, if any, and if in dialogue mode
+
+        if (boxChoices){
+            DisplayChoices();
+        }
         canContinueToNextLine = true;
+
+    }
+
+    private void ReturnButtonDisplay()
+    {
+        List<Choice> currentChoices = currentStory.currentChoices;
+        Debug.Log("Choices count: " + currentChoices.Count);
+        int index = currentChoices.Count - 1;
+        ReturnChoice.SetActive(true);
+        returnText.text = currentChoices[index].text;
+
+        StartCoroutine(SelectReturnButton());
+    }
+
+    private IEnumerator SelectReturnButton()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        yield return new WaitForEndOfFrame();
+        EventSystem.current.SetSelectedGameObject(ReturnChoice.gameObject);
+    }
+
+    public void ReturnButtonChoose(){
+        List<Choice> currentChoices = currentStory.currentChoices;
+        int index = currentChoices.Count - 1;
+
+        if (canContinueToNextLine)
+        {
+            currentStory.ChooseChoiceIndex(index);
+            InputManager.GetInstance().RegisterSubmitPressed(); // this is specific to my InputManager script
+            ReturnChoice.SetActive(false);
+            ContinueStory();
+
+
+        }
 
     }
 
