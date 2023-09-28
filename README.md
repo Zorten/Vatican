@@ -9,6 +9,6 @@ Text-based horror game on the Unity game engine, using the ink scripting languag
 The project was developed as part of UCR's Gamespawn Club. 
 
 ### Vatican Progress Demo Video
-[![Watch Vatican video](Images/video.png)](https://youtu.be/qADfdMHvsiM)
+[![Watch Vatican video](Images/vid.png)](https://youtu.be/qADfdMHvsiM)
 
 
